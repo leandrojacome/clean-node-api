@@ -10,12 +10,3 @@ export interface HttpRequest {
 export interface Controller {
   handle: (httpRequest: HttpRequest) => HttpResponse
 }
-
-export class MissingParamError {
-  constructor (paramName: string) {
-    this.body = new Error(`Missing param: ${paramName}`)
-  }
-
-  statusCode: number
-  body: Error
-}
